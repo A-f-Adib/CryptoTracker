@@ -9,16 +9,16 @@
 /* Begin PBXBuildFile section */
 		742E019C2B927F35000FD055 /* CryptoTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742E019B2B927F35000FD055 /* CryptoTrackerApp.swift */; };
 		742E019E2B927F35000FD055 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742E019D2B927F35000FD055 /* ContentView.swift */; };
-		742E01A02B927F36000FD055 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 742E019F2B927F36000FD055 /* Assets.xcassets */; };
 		742E01A32B927F36000FD055 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 742E01A22B927F36000FD055 /* Preview Assets.xcassets */; };
+		742E01AA2B928094000FD055 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 742E01A92B928094000FD055 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		742E01982B927F35000FD055 /* CryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		742E019B2B927F35000FD055 /* CryptoTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackerApp.swift; sourceTree = "<group>"; };
 		742E019D2B927F35000FD055 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		742E019F2B927F36000FD055 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		742E01A22B927F36000FD055 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		742E01A92B928094000FD055 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../Downloads/Resources/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +53,7 @@
 			children = (
 				742E019B2B927F35000FD055 /* CryptoTrackerApp.swift */,
 				742E019D2B927F35000FD055 /* ContentView.swift */,
-				742E019F2B927F36000FD055 /* Assets.xcassets */,
+				742E01A92B928094000FD055 /* Assets.xcassets */,
 				742E01A12B927F36000FD055 /* Preview Content */,
 			);
 			path = CryptoTracker;
@@ -126,7 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				742E01A32B927F36000FD055 /* Preview Assets.xcassets in Resources */,
-				742E01A02B927F36000FD055 /* Assets.xcassets in Resources */,
+				742E01AA2B928094000FD055 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

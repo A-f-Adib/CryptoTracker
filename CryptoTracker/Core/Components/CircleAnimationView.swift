@@ -9,7 +9,8 @@ import SwiftUI
 
 struct CircleAnimationView: View {
     
-    @State var animate = false
+//    @State var animate = false
+    @Binding var animate : Bool
     
     var body: some View {
         Circle()
@@ -17,15 +18,13 @@ struct CircleAnimationView: View {
             .scale(animate ? 1.0 : 0.0)
             .opacity(animate ? 0.0 : 1.0)
             .animation( animate ? Animation.easeOut(duration: 1.0) : .none)
-            .onAppear {
-                animate.toggle()
-            }
+            
     }
 }
 
 struct CircleAnimationView_Previews: PreviewProvider {
     static var previews: some View {
-        CircleAnimationView()
+        CircleAnimationView(animate: .constant(false))
             .foregroundColor(.blue)
             .frame(width: 100, height: 100)
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74039A432B97064B003C7B52 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74039A422B97064B003C7B52 /* HomeViewModel.swift */; };
 		742E019C2B927F35000FD055 /* CryptoTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742E019B2B927F35000FD055 /* CryptoTrackerApp.swift */; };
 		742E019E2B927F35000FD055 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742E019D2B927F35000FD055 /* ContentView.swift */; };
 		742E01A32B927F36000FD055 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 742E01A22B927F36000FD055 /* Preview Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		74039A422B97064B003C7B52 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		742E01982B927F35000FD055 /* CryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		742E019B2B927F35000FD055 /* CryptoTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackerApp.swift; sourceTree = "<group>"; };
 		742E019D2B927F35000FD055 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		7468CAF52B94BC190047A3CB /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				74039A422B97064B003C7B52 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7468CB022B951D200047A3CB /* CoinRowView.swift in Sources */,
+				74039A432B97064B003C7B52 /* HomeViewModel.swift in Sources */,
 				742E019E2B927F35000FD055 /* ContentView.swift in Sources */,
 				7468CAFD2B94CB890047A3CB /* CircleAnimationView.swift in Sources */,
 				7468CAF82B94BC4D0047A3CB /* HomeView.swift in Sources */,

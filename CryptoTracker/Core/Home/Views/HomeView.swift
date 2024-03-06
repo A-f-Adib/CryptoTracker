@@ -14,6 +14,7 @@ struct HomeView: View {
     @State private var showPortfolio = false
     
     var body: some View {
+        
         ZStack {
             Color.theme.background
                 .ignoresSafeArea()

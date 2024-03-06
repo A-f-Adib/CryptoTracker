@@ -12,7 +12,9 @@ struct CircleButtonView: View {
     let iconName : String
     
     var body: some View {
+        
        Image(systemName: iconName)
+        
             .font(.headline)
             .foregroundColor(Color.theme.accent)
             .frame(width : 50, height: 50)

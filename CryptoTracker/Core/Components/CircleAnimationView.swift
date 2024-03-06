@@ -13,6 +13,7 @@ struct CircleAnimationView: View {
     @Binding var animate : Bool
     
     var body: some View {
+        
         Circle()
             .stroke(lineWidth: 5.0)
             .scale(animate ? 1.0 : 0.0)

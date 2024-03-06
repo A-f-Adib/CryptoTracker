@@ -26,8 +26,11 @@ struct HomeView: View {
                 homeHeader
                 
                 if !showPortfolio {
+                    
                     List {
+                        
                         ForEach(vm.allCoins) { coin in
+                            
                             CoinRowView(coin: coin, showHoldingColumn: false)
                                 
                         }

@@ -27,16 +27,7 @@ struct HomeView: View {
                 
                 if !showPortfolio {
                     
-                    List {
-                        
-                        ForEach(vm.allCoins) { coin in
-                            
-                            CoinRowView(coin: coin, showHoldingColumn: false)
-                                .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 0))
-                                
-                        }
-                    }
-                    .listStyle(PlainListStyle())
+                   
                     .transition(.move(edge: .leading))
                 }
                
@@ -85,5 +76,19 @@ extension HomeView {
                 }
             
         }
+    }
+    
+    private var allCoins : some View {
+        
+        List {
+            
+            ForEach(vm.allCoins) { coin in
+                
+                CoinRowView(coin: coin, showHoldingColumn: false)
+                    .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                    
+            }
+        }
+        .listStyle(PlainListStyle())
     }
 }

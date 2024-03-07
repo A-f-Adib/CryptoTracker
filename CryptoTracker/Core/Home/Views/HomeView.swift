@@ -25,6 +25,16 @@ struct HomeView: View {
                 
                 homeHeader
                 
+                HStack {
+                    Text("Coin")
+                    Spacer()
+                    Text("Holdings")
+                    Text("Price")
+                }
+                .font(.caption)
+                .foregroundColor(Color.theme.secondaryText)
+                .padding(.horizontal)
+                
                 if !showPortfolio {
                     
                    allCoinsList

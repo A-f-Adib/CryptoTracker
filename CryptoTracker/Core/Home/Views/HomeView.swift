@@ -27,8 +27,11 @@ struct HomeView: View {
                 
                 if !showPortfolio {
                     
-                   
+                   allCoinsList
                     .transition(.move(edge: .leading))
+                }
+                if showPortfolio {
+                    
                 }
                
                 
@@ -78,11 +81,26 @@ extension HomeView {
         }
     }
     
-    private var allCoins : some View {
+    private var allCoinsList : some View {
         
         List {
             
             ForEach(vm.allCoins) { coin in
+                
+                CoinRowView(coin: coin, showHoldingColumn: false)
+                    .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                    
+            }
+        }
+        .listStyle(PlainListStyle())
+    }
+    
+    
+    private var portfolioCoinsList : some View {
+        
+        List {
+            
+            ForEach(vm.portfolioCoins) { coin in
                 
                 CoinRowView(coin: coin, showHoldingColumn: false)
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))

@@ -11,7 +11,7 @@ import Combine
 class CoinDataService {
     
     @Published var allCoins : [CoinModel] = []
-    var cancellable = Set<AnyCancellable>()
+    var coinSubscribtion: AnyCancellable?
     
     init() {
         getCoins()
@@ -25,7 +25,7 @@ class CoinDataService {
             return
         }
         
-        URLSession.shared.dataTaskPublisher(for: url)
+       coinSubscribtion =  URLSession.shared.dataTaskPublisher(for: url)
             .subscribe(on: DispatchQueue.global(qos: .default))
             .tryMap { (output)-> Data in
                 
@@ -46,7 +46,8 @@ class CoinDataService {
                 }
             } receiveValue: { [weak self] (returnedCoins) in
                 self?.allCoins = returnedCoins
+                self?.coinSubscribtion?.cancel()
             }
-            .store(in: &cancellable)
+           
     }
 }

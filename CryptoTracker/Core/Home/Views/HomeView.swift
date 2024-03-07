@@ -31,7 +31,8 @@ struct HomeView: View {
                     .transition(.move(edge: .leading))
                 }
                 if showPortfolio {
-                    
+                    portfolioCoinsList
+                        .transition(.move(edge: .trailing))
                 }
                
                 
@@ -102,7 +103,7 @@ extension HomeView {
             
             ForEach(vm.portfolioCoins) { coin in
                 
-                CoinRowView(coin: coin, showHoldingColumn: false)
+                CoinRowView(coin: coin, showHoldingColumn: true)
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
                     
             }

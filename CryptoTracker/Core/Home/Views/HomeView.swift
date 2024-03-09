@@ -56,6 +56,7 @@ extension HomeView {
     private var homeHeader: some View {
         
         HStack {
+            
             CircleButtonView(iconName: showPortfolio ? "plus" : "info")
                 .animation(.none)
                 .background(
@@ -63,12 +64,15 @@ extension HomeView {
                 )
             
             Spacer()
+            
             Text(showPortfolio ? "Portfolio" : "Live Prices")
                 .font(.headline)
                 .fontWeight(.heavy)
                 .foregroundColor(Color.theme.accent)
                 .animation(.none)
+            
             Spacer()
+            
             CircleButtonView(iconName: "chevron.right")
                 .rotationEffect(Angle(degrees: showPortfolio ? 180 : 0))
                 .onTapGesture {
@@ -114,6 +118,7 @@ extension HomeView {
         HStack {
             Text("Coin")
             Spacer()
+            
             if showPortfolio {
                 Text("Holdings")
             }

@@ -10,7 +10,6 @@ import SwiftUI
 struct HomeView: View {
     
     @EnvironmentObject private var vm : HomeViewModel
-    
     @State private var showPortfolio = false
     
     var body: some View {
@@ -18,18 +17,15 @@ struct HomeView: View {
         ZStack {
             
             Color.theme.background
-            
                 .ignoresSafeArea()
             
             VStack {
                 
                 homeHeader
-                
                 columnTitles
                 
                 if !showPortfolio {
-                    
-                   allCoinsList
+                    allCoinsList
                     .transition(.move(edge: .leading))
                 }
                 if showPortfolio {

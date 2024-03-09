@@ -14,12 +14,15 @@ struct CoinRowView: View {
     
     var body: some View {
         HStack(spacing : 0) {
+            
             Text("\(coin.rank)")
                 .font(.caption)
                 .foregroundColor(Color.theme.secondaryText)
                 .frame(minWidth : 30)
+            
             Circle()
                 .frame(width: 30, height: 30)
+            
             Text(coin.symbol.uppercased())
                 .font(.headline)
                 .padding(.leading, 6)

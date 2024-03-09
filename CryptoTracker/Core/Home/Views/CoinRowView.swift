@@ -28,7 +28,9 @@ struct CoinRowView: View {
             
             if showHoldingColumn {
                 VStack(alignment: .trailing) {
+                    
                     Text(coin.currentHoldingsValue.asCurrencyWith2Decimals())
+                    
                     Text((coin.currentHoldings ?? 0).asNumberString())
                 }
                 .foregroundColor(Color.theme.accent)

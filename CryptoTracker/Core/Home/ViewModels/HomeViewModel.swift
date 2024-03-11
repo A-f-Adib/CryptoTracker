@@ -19,6 +19,7 @@ class HomeViewModel : ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     init() {
+        
         addSubscribers()
     }
     

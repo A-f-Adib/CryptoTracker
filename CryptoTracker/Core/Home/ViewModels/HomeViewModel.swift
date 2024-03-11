@@ -11,6 +11,7 @@ import Combine
 class HomeViewModel : ObservableObject {
     
     @Published var allCoins : [ CoinModel] = []
+    
     @Published var portfolioCoins : [CoinModel] = []
     
     private let dataService = CoinDataService()

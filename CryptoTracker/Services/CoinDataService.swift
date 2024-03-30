@@ -25,17 +25,7 @@ class CoinDataService {
             return
         }
         
-       coinSubscribtion =  URLSession.shared.dataTaskPublisher(for: url)
-            .subscribe(on: DispatchQueue.global(qos: .default))
-            .tryMap { (output)-> Data in
-                
-                guard let respnse = output.response as? HTTPURLResponse,
-                      respnse.statusCode >= 200 && respnse.statusCode < 300 else {
-                          throw URLError(.badServerResponse)
-                      }
-                return output.data
-            }
-            .receive(on: DispatchQueue.main)
+        coinSubscribtion =  NetworkingManager.download(url: url)
             .decode(type: [CoinModel].self, decoder: JSONDecoder())
             .sink { (completion) in
                 switch completion {

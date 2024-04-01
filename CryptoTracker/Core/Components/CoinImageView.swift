@@ -12,9 +12,17 @@ class coinImageViewModel : ObservableObject {
     @Published var image: UIImage? = nil
     @Published var isLoading : Bool = false
     
+    init() {
+        getImage()
+    }
+    
+    private func getImage() {
+        
+    }
 }
 
 struct CoinImageView: View {
+    @StateObject var vm: coinImageViewModel = coinImageViewModel()
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }

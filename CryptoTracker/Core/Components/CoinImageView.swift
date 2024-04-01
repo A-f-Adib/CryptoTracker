@@ -31,6 +31,9 @@ struct CoinImageView: View {
                     .scaledToFit()
             } else if vm.isLoading {
                 ProgressView()
+            } else {
+                Image(systemName: "questionmark")
+                    .foregroundColor(Color.theme.secondaryText)
             }
         }
     }
@@ -39,5 +42,7 @@ struct CoinImageView: View {
 struct CoinImageView_Previews: PreviewProvider {
     static var previews: some View {
         CoinImageView()
+            .padding()
+            .previewLayout(.sizeThatFits)
     }
 }

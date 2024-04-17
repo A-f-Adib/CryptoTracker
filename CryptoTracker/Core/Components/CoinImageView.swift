@@ -7,22 +7,12 @@
 
 import SwiftUI
 
-class coinImageViewModel : ObservableObject {
-    
-    @Published var image: UIImage? = nil
-    @Published var isLoading : Bool = false
-    
-    init() {
-        getImage()
-    }
-    
-    private func getImage() {
-        
-    }
-}
+
 
 struct CoinImageView: View {
+    
     @StateObject var vm: coinImageViewModel = coinImageViewModel()
+    
     var body: some View {
         ZStack{
             if let image = vm.image {

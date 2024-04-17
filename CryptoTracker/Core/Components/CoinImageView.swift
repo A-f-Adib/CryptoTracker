@@ -9,7 +9,11 @@ import SwiftUI
 
 struct CoinImageView: View {
     
-    @StateObject var vm: coinImageViewModel = coinImageViewModel()
+    @StateObject var vm: coinImageViewModel
+    
+    init(coin: CoinModel) {
+        _vm = StateObject(wrappedValue: coinImageViewModel(coin: coin))
+    }
     
     var body: some View {
         ZStack{
@@ -29,7 +33,7 @@ struct CoinImageView: View {
 
 struct CoinImageView_Previews: PreviewProvider {
     static var previews: some View {
-        CoinImageView()
+        CoinImageView(coin: dev.coin)
             .padding()
             .previewLayout(.sizeThatFits)
     }

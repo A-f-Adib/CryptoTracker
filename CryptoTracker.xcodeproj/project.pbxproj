@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		74039A432B97064B003C7B52 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74039A422B97064B003C7B52 /* HomeViewModel.swift */; };
+		74140B5C2BD088C200D7CC9F /* CoinImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74140B5B2BD088C200D7CC9F /* CoinImageViewModel.swift */; };
 		741636C62BBB159600F216B6 /* CoinImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741636C52BBB159600F216B6 /* CoinImageView.swift */; };
 		741636C82BBB27FE00F216B6 /* CoinImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741636C72BBB27FE00F216B6 /* CoinImageService.swift */; };
 		742E019C2B927F35000FD055 /* CryptoTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742E019B2B927F35000FD055 /* CryptoTrackerApp.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		74039A422B97064B003C7B52 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		74140B5B2BD088C200D7CC9F /* CoinImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageViewModel.swift; sourceTree = "<group>"; };
 		741636C52BBB159600F216B6 /* CoinImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageView.swift; sourceTree = "<group>"; };
 		741636C72BBB27FE00F216B6 /* CoinImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageService.swift; sourceTree = "<group>"; };
 		742E01982B927F35000FD055 /* CryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				74039A422B97064B003C7B52 /* HomeViewModel.swift */,
+				74140B5B2BD088C200D7CC9F /* CoinImageViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				7468CAFB2B94C2F10047A3CB /* CircleButtonView.swift in Sources */,
 				749E585D2BB8A86F00BBBD91 /* NetworkingManager.swift in Sources */,
 				742E01B62B928852000FD055 /* Color.swift in Sources */,
+				74140B5C2BD088C200D7CC9F /* CoinImageViewModel.swift in Sources */,
 				7468CB042B951D4C0047A3CB /* PreviewProvider.swift in Sources */,
 				7468CB062B95221F0047A3CB /* Double.swift in Sources */,
 				741636C82BBB27FE00F216B6 /* CoinImageService.swift in Sources */,

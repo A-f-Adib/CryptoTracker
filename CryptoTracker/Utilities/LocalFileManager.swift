@@ -32,11 +32,21 @@ class LocalFileManager {
     }
     
     
-    private func getUrlForFolder(name: String) -> URL? {
+    private func getUrlForFolder(folderName: String) -> URL? {
         
         guard let url = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first
         else {
             return nil
         }
+        return url.appendingPathComponent(folderName)
+    }
+    
+    
+    private func getUrlForImage(folderName: String, imageName: String) ->URL? {
+        
+        guard let folderURL = getUrlForFolder(folderName: folderName) else {
+            return nil
+        }
+        return folderURL.appendingPathComponent(imageName + ".png")
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchbarView: View {
     
-    @State var searchText : String = ""
+    @Binding var searchText : String
     
     var body: some View {
       
@@ -25,6 +25,9 @@ struct SearchbarView: View {
                     .offset(x: 10)
                     .foregroundColor(Color.theme.accent)
                     .opacity(searchText.isEmpty ? 0.0 : 1.0)
+                    .onTapGesture(perform: {
+                        searchText = ""
+                    })
                   , alignment: .trailing
                 )
         }
@@ -41,6 +44,6 @@ struct SearchbarView: View {
 
 struct SearchbarView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchbarView()
+        SearchbarView(searchText: .constant(""))
     }
 }

@@ -27,6 +27,7 @@
 		749E585D2BB8A86F00BBBD91 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749E585C2BB8A86F00BBBD91 /* NetworkingManager.swift */; };
 		74B7BAC92B9A5AB200EA3D9F /* CoinDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B7BAC82B9A5AB200EA3D9F /* CoinDataService.swift */; };
 		74C98E102BD2FC8B0020F8A5 /* SearchbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C98E0F2BD2FC8B0020F8A5 /* SearchbarView.swift */; };
+		74C98E122BD306A60020F8A5 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C98E112BD306A60020F8A5 /* UIApplication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		749E585C2BB8A86F00BBBD91 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		74B7BAC82B9A5AB200EA3D9F /* CoinDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataService.swift; sourceTree = "<group>"; };
 		74C98E0F2BD2FC8B0020F8A5 /* SearchbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchbarView.swift; sourceTree = "<group>"; };
+		74C98E112BD306A60020F8A5 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				742E01B52B928852000FD055 /* Color.swift */,
 				7468CB032B951D4C0047A3CB /* PreviewProvider.swift */,
 				7468CB052B95221F0047A3CB /* Double.swift */,
+				74C98E112BD306A60020F8A5 /* UIApplication.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				741636C62BBB159600F216B6 /* CoinImageView.swift in Sources */,
 				7468CAF82B94BC4D0047A3CB /* HomeView.swift in Sources */,
 				742E019C2B927F35000FD055 /* CryptoTrackerApp.swift in Sources */,
+				74C98E122BD306A60020F8A5 /* UIApplication.swift in Sources */,
 				7468CAFB2B94C2F10047A3CB /* CircleButtonView.swift in Sources */,
 				749E585D2BB8A86F00BBBD91 /* NetworkingManager.swift in Sources */,
 				742E01B62B928852000FD055 /* Color.swift in Sources */,

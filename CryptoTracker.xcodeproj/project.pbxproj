@@ -26,6 +26,7 @@
 		7468CB062B95221F0047A3CB /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7468CB052B95221F0047A3CB /* Double.swift */; };
 		749E585D2BB8A86F00BBBD91 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749E585C2BB8A86F00BBBD91 /* NetworkingManager.swift */; };
 		74B7BAC92B9A5AB200EA3D9F /* CoinDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B7BAC82B9A5AB200EA3D9F /* CoinDataService.swift */; };
+		74C98E102BD2FC8B0020F8A5 /* SearchbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C98E0F2BD2FC8B0020F8A5 /* SearchbarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		7468CB052B95221F0047A3CB /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		749E585C2BB8A86F00BBBD91 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		74B7BAC82B9A5AB200EA3D9F /* CoinDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataService.swift; sourceTree = "<group>"; };
+		74C98E0F2BD2FC8B0020F8A5 /* SearchbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchbarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				7468CAFA2B94C2F10047A3CB /* CircleButtonView.swift */,
 				7468CAFC2B94CB890047A3CB /* CircleAnimationView.swift */,
 				741636C52BBB159600F216B6 /* CoinImageView.swift */,
+				74C98E0F2BD2FC8B0020F8A5 /* SearchbarView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				74140B5C2BD088C200D7CC9F /* CoinImageViewModel.swift in Sources */,
 				7468CB042B951D4C0047A3CB /* PreviewProvider.swift in Sources */,
 				74140B5E2BD0977A00D7CC9F /* LocalFileManager.swift in Sources */,
+				74C98E102BD2FC8B0020F8A5 /* SearchbarView.swift in Sources */,
 				7468CB062B95221F0047A3CB /* Double.swift in Sources */,
 				741636C82BBB27FE00F216B6 /* CoinImageService.swift in Sources */,
 				7468CB002B94CFC50047A3CB /* CoinModel.swift in Sources */,

@@ -33,5 +33,25 @@ class HomeViewModel : ObservableObject {
                 self?.allCoins = returnedCoins
             }
             .store(in: &cancellables)
+        
+        $searchText
+            .combineLatest(dataService.$allCoins)
+            .map { (text, startingCoins) -> [CoinModel] in
+                
+                guard !text.isEmpty else {
+                    return startingCoins
+                }
+                let lowerCasedText = text.lowercased()
+                return startingCoins.filter { (coin) -> Bool in
+                    return coin.name.lowercased().contains(lowerCasedText) ||
+                    coin.symbol.lowercased().contains(lowerCasedText) ||
+                    coin.id.lowercased().contains(lowerCasedText)
+                }
+                
+            }
+            .sink { [weak self] (returnedCoins) in
+                self?.allCoins = returnedCoins
+            }
+            .store(in: &cancellables)
     }
 }

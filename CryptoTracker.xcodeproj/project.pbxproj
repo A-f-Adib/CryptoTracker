@@ -28,6 +28,7 @@
 		74B7BAC92B9A5AB200EA3D9F /* CoinDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B7BAC82B9A5AB200EA3D9F /* CoinDataService.swift */; };
 		74C98E102BD2FC8B0020F8A5 /* SearchbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C98E0F2BD2FC8B0020F8A5 /* SearchbarView.swift */; };
 		74C98E122BD306A60020F8A5 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C98E112BD306A60020F8A5 /* UIApplication.swift */; };
+		74DB16EB2BDC3EA2008279CD /* HomeStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DB16EA2BDC3EA2008279CD /* HomeStatView.swift */; };
 		74F30F142BD4793000E5D0A1 /* StatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F30F132BD4793000E5D0A1 /* StatisticModel.swift */; };
 		74F30F162BD47DFD00E5D0A1 /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F30F152BD47DFD00E5D0A1 /* StatisticView.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		74B7BAC82B9A5AB200EA3D9F /* CoinDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataService.swift; sourceTree = "<group>"; };
 		74C98E0F2BD2FC8B0020F8A5 /* SearchbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchbarView.swift; sourceTree = "<group>"; };
 		74C98E112BD306A60020F8A5 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		74DB16EA2BDC3EA2008279CD /* HomeStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatView.swift; sourceTree = "<group>"; };
 		74F30F132BD4793000E5D0A1 /* StatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticModel.swift; sourceTree = "<group>"; };
 		74F30F152BD47DFD00E5D0A1 /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +155,7 @@
 			children = (
 				7468CAF72B94BC4D0047A3CB /* HomeView.swift */,
 				7468CB012B951D200047A3CB /* CoinRowView.swift */,
+				74DB16EA2BDC3EA2008279CD /* HomeStatView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				74C98E122BD306A60020F8A5 /* UIApplication.swift in Sources */,
 				7468CAFB2B94C2F10047A3CB /* CircleButtonView.swift in Sources */,
 				749E585D2BB8A86F00BBBD91 /* NetworkingManager.swift in Sources */,
+				74DB16EB2BDC3EA2008279CD /* HomeStatView.swift in Sources */,
 				742E01B62B928852000FD055 /* Color.swift in Sources */,
 				74140B5C2BD088C200D7CC9F /* CoinImageViewModel.swift in Sources */,
 				7468CB042B951D4C0047A3CB /* PreviewProvider.swift in Sources */,

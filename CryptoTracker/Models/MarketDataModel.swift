@@ -7,14 +7,22 @@
 
 import Foundation
 
-struct Welcome {
-    let data : DataClass?
+struct GlobalData: Codable {
+    let data : MarketDataModel?
 }
 
-struct DataClass {
-    let activeCryptocurrencies, upcomingIcos, ongoingIcos, endenIcos: Int?
-    let markets: Int?
-    let totalMarketCap, totalVolume, marketCapPercentage: [String: Double]?
-    let marketCapChangepercentage24HUsd : Double?
-    let updatedAt: Int?
+struct MarketDataModel : Codable {
+   
+    let totalMarketCap, totalVolume, marketCapPercentage: [String: Double]
+    let marketCapChangepercentage24HUsd : Double
+  
+    
+    enum CodingKeys: String, CodingKey {
+        case totalMarketCap = "total_market_cap"
+        case totalVolume = "total_volume"
+        case marketCapPercentage = "market_cap_percentage"
+        case marketCapPercentage24HUsd = "market_cap_percentage_24h_usd"
+        
+        
+    }
 }

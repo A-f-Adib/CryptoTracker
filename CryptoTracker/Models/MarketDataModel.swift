@@ -17,14 +17,7 @@ struct MarketDataModel : Codable {
     let marketCapChangepercentage24HUsd : Double
   
     
-    enum CodingKeys: String, CodingKey {
-        case totalMarketCap = "total_market_cap"
-        case totalVolume = "total_volume"
-        case marketCapPercentage = "market_cap_percentage"
-        case marketCapPercentage24HUsd = "market_cap_percentage_24h_usd"
-        
-        
-    }
+    
     
     var marketCap: String {
         if let item = totalMarketCap.first(where: { $0.key == "usd"}) {
@@ -46,4 +39,14 @@ struct MarketDataModel : Codable {
         }
         return ""
     }
+    
+    
+}
+
+enum CodingKeys: String, CodingKey {
+    case totalMarketCap = "total_market_cap"
+    case totalVolume = "total_volume"
+    case marketCapPercentage = "market_cap_percentage"
+    case marketCapPercentage24HUsd = "market_cap_percentage_24h_usd"
+    
 }

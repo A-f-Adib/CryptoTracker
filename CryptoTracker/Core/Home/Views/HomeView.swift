@@ -69,7 +69,7 @@ extension HomeView {
 //                .animation(.none)
                 .onTapGesture {
                     if showPortfolio {
-                        showPortfolioView.toggle()
+                       showPortfolioView.toggle()
                     }
                 }
                 .background(

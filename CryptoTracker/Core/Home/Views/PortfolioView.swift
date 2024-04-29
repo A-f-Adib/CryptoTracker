@@ -17,28 +17,8 @@ struct PortfolioView: View {
             ScrollView{
                 VStack(alignment: .leading, spacing: 0) {
                     SearchbarView(searchText: $vm.searchText)
-                    
-                    ScrollView (.horizontal, showsIndicators: true, content: {
-                        LazyHStack(spacing: 10) {
-                            ForEach(vm.allCoins) { coin in
-                              CoinLogoView(coin: coin)
-                                    .frame(width: 75)
-                                    .padding(4)
-                                    .onTapGesture(perform: {
-                                        withAnimation(.easeInOut) {
-                                            selectedCoin = coin
-                                        }
-                                    })
-                                    .background(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke(selectedCoin?.id == coin.id ? Color.blue : Color.clear, lineWidth: 1)
-                                    )
-                            }
-                        }
-                        .padding(.vertical, 4)
-                        .padding(.leading)
-                    })
-                }
+                    coinLogoList
+                    }
             }
             .navigationTitle("Edit portfolio")
             .toolbar(content: {
@@ -55,5 +35,33 @@ struct PortfolioView_Previews: PreviewProvider {
     static var previews: some View {
         PortfolioView()
             .environmentObject(dev.homeVM)
+    }
+}
+
+
+extension PortfolioView {
+    
+    private var coinLogoList: some View {
+        
+        ScrollView (.horizontal, showsIndicators: true, content: {
+            LazyHStack(spacing: 10) {
+                ForEach(vm.allCoins) { coin in
+                  CoinLogoView(coin: coin)
+                        .frame(width: 75)
+                        .padding(4)
+                        .onTapGesture(perform: {
+                            withAnimation(.easeInOut) {
+                                selectedCoin = coin
+                            }
+                        })
+                        .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(selectedCoin?.id == coin.id ? Color.blue : Color.clear, lineWidth: 1)
+                        )
+                }
+            }
+            .padding(.vertical, 4)
+            .padding(.leading)
+        })
     }
 }

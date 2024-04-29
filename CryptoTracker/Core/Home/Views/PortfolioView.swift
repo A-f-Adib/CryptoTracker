@@ -10,6 +10,7 @@ import SwiftUI
 struct PortfolioView: View {
     
     @EnvironmentObject private var vm : HomeViewModel
+    @State private var selectedCoin: CoinModel? = nil
     
     var body: some View {
         NavigationView{
@@ -20,9 +21,22 @@ struct PortfolioView: View {
                     ScrollView (.horizontal, showsIndicators: true, content: {
                         LazyHStack(spacing: 10) {
                             ForEach(vm.allCoins) { coin in
-                                Text(coin.symbol.uppercased())
+                              CoinLogoView(coin: coin)
+                                    .frame(width: 75)
+                                    .padding(4)
+                                    .onTapGesture(perform: {
+                                        withAnimation(.easeInOut) {
+                                            selectedCoin = coin
+                                        }
+                                    })
+                                    .background(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(selectedCoin?.id == coin.id ? Color.blue : Color.clear, lineWidth: 1)
+                                    )
                             }
                         }
+                        .padding(.vertical, 4)
+                        .padding(.leading)
                     })
                 }
             }

@@ -92,6 +92,18 @@ extension PortfolioView {
     }
     
     
+    private func updateSelectedCoin(coin: CoinModel) {
+        selectedCoin = coin
+        
+       if let portfolioCoin = vm.portfolioCoins.first(where: { $0.id == coin.id }),
+          let amount = portfolioCoin.currentHoldings {
+           quantityText = "\(amount)"
+       } else {
+           quantityText = ""
+       }
+    }
+    
+    
     private func getCurrentValue () -> Double {
         if let quantity = Double(quantityText) {
             return quantity * (selectedCoin?.currentPrice ?? 0)
@@ -148,14 +160,15 @@ extension PortfolioView {
     
     
     private func saveButtonPressed() {
+        
         guard let coin = selectedCoin else { return }
         
-        guard 
+        guard
               let coin = selectedCoin,
               let amount = Double(quantityText)
         else { return }
         //save to portfolio
-        vm.updatePortfolio(coin: coin, amount: <#T##Double#>)
+        vm.updatePortfolio(coin: coin, amount: amount)
         
         // show checkmark
         

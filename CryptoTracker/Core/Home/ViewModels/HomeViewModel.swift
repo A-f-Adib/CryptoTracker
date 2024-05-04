@@ -45,6 +45,24 @@ class HomeViewModel : ObservableObject {
                 self?.statistics = returnedstats
             }
             .store(in: &cancellables)
+        
+        
+        $allCoins
+            .combineLatest(portfolioDataService.$savedEntity)
+            .map { (coinModels, portfolioEntities) -> [CoinModel] in
+                coinModels
+                    .compactMap { (coin) -> CoinModel? in
+                        guard let entity = portfolioEntities.first(where: { $0.coinID == coin.id }) else {
+                            return nil
+                        }
+                        return coin.updateHoldings(amount: entity.amount)
+                    }
+                
+            }
+            .sink { [weak self] (returnedCoins) in
+                self?.portfolioCoins = returnedCoins
+            }
+            .store(in: &cancellables)
     }
     
     

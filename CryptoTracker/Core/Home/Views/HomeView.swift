@@ -137,6 +137,14 @@ extension HomeView {
             }
             Text("Price")
                 .frame(width : UIScreen.main.bounds.width / 3.0, alignment: .trailing )
+            
+            Button {
+                vm.reloadData()
+            } label: {
+                Image(systemName: "goforward")
+            }
+            .rotationEffect(Angle(degrees: vm.isLoading ? 360 : 0), anchor: .center)
+
         }
         .font(.caption)
         .foregroundColor(Color.theme.secondaryText)

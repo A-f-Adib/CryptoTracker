@@ -16,11 +16,16 @@ class HomeViewModel : ObservableObject {
     @Published var portfolioCoins : [CoinModel] = []
     @Published var searchText : String = ""
     @Published var isLoading : Bool = false
+    @Published var sortOption : SortOption = .holdings
     
     private let coinDataService = CoinDataService()
     private let marketDataService = MarketDataService()
     private let portfolioDataService = PortfolioDataService()
     private var cancellables = Set<AnyCancellable>()
+    
+    enum SortOption {
+        case rank, rankreversed, holdings, holdingsReversed, price, priceReversed
+    }
     
     init() {
         
@@ -30,9 +35,9 @@ class HomeViewModel : ObservableObject {
     func addSubscribers () {
         
         $searchText
-            .combineLatest(coinDataService.$allCoins)
+            .combineLatest(coinDataService.$allCoins, $sortOption)
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
-            .map(filterCoins)
+            .map(filterAndSortCoins)
            
             .sink { [weak self] (returnedCoins) in
                 self?.allCoins = returnedCoins
@@ -69,6 +74,15 @@ class HomeViewModel : ObservableObject {
         isLoading = true
         coinDataService.getCoins()
         marketDataService.getData()
+        HapticManager.notification(type: .success)
+    }
+    
+    
+    private func filterAndSortCoins(text: String, coins: [CoinModel], sort: SortOption) -> [CoinModel] {
+        
+        let filteredCoins = filterCoins(text: text, startingCoins: coins)
+        let sortedCoins = sortCoins(sort: sort, coins: filteredCoins)
+        return sortedCoins
     }
     
     
@@ -84,6 +98,20 @@ class HomeViewModel : ObservableObject {
             coin.id.lowercased().contains(lowerCasedText)
         }
         
+    }
+    
+    
+    private func sortCoins(sort: SortOption, coins: [CoinModel]) -> [CoinModel] {
+        switch sort {
+        case .rank, .holdings:
+            return coins.sorted(by: { $0.rank < $1.rank })
+        case .rankreversed, .holdingsReversed :
+            return  coins.sorted(by: { $0.rank > $1.rank })
+        case .price:
+            return  coins.sorted(by: { $0.currentPrice > $1.currentPrice })
+        case .priceReversed:
+            return  coins.sorted(by: { $0.currentPrice < $1.currentPrice })
+        }
     }
     
     

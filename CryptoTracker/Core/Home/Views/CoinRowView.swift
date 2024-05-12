@@ -54,6 +54,9 @@ struct CoinRowView: View {
             .frame(width : UIScreen.main.bounds.width / 3.0, alignment: .trailing )
             
         }
+        .background(
+            Color.theme.background.opacity(0.001)
+        )
     }
 }
 

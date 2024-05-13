@@ -22,8 +22,12 @@ struct DetailLoadingView: View {
 
 struct DetailView: View {
     
-    @StateObject var vm : DetailViewModel
+    @StateObject private var vm : DetailViewModel
     
+    private let columns: [GridItem] = [
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
    
     
     init(coin: CoinModel) {
@@ -42,6 +46,24 @@ struct DetailView: View {
                     .bold()
                     .foregroundColor(Color.theme.accent)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                Divider()
+                
+                LazyVGrid(
+                    columns: columns,
+                    alignment: .center,
+                    spacing: nil,
+                    pinnedViews: [],
+                    content: {
+                        Text("ABC")
+                        Text("DEF")
+                    })
+                
+                Text("Additional Details")
+                    .font(.title)
+                    .bold()
+                    .foregroundColor(Color.theme.accent)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Divider()
             }
             .padding()
             

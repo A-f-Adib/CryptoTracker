@@ -19,6 +19,11 @@ class DetailViewModel {
     }
     
     private func addSubscribers() {
-        
+        coinDetailService.$coinDetails
+            .sink { (returnedCoinDetails) in
+                print("Received coin details")
+                print(returnedCoinDetails)
+            }
+            .store(in: &cancellables)
     }
 }

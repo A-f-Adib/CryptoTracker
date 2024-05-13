@@ -28,9 +28,30 @@ class DetailViewModel: ObservableObject {
             .combineLatest($coin)
             .map( { (coinDetailModel, coinModel) -> (overview: [StatisticModel], additional: [StatisticModel]) in
                 
-                var overViewArray: [StatisticModel] = []
+                //overview
+                let price = coinModel.currentPrice.asCurrencyWith6Decimals()
+                let priceChange = coinModel.priceChangePercentage24H
+                let priceStat = StatisticModel(title: "Current Price", value: price, percentageChange: priceChange)
                 
-                return ([],[])
+                let marketCap = "$" + (coinModel.marketCap?.formattedWithAbbreviations() ?? "")
+                let marketCapChange = coinModel.marketCapChangePercentage24H
+                let marketCapStat = StatisticModel(title: "Market Capitalization", value: marketCap, percentageChange: marketCapChange)
+                
+                let rank = "\(coinModel.rank)"
+                let rankStat = StatisticModel(title: "Rank", value: rank)
+                
+                let volume = "$" + (coinModel.totalVolume?.formattedWithAbbreviations() ?? "")
+                let volumeStat = StatisticModel(title: "Volume", value: volume)
+                
+                var overViewArray: [StatisticModel] = [
+                    priceStat, marketCapStat, rankStat, volumeStat
+                ]
+                
+                //additionals
+                
+                
+                
+                return (overViewArray,[])
             })
             .sink { (returnedArrays) in
                 print("Received coin details")

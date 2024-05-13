@@ -28,16 +28,32 @@ struct DetailView: View {
     
     init(coin: CoinModel) {
        _vm = StateObject(wrappedValue: DetailViewModel(coin: coin ))
-        print("detail view for \(coin.name)")
+     
     }
     
     var body: some View {
-        Text("HEllO")
+        ScrollView {
+            VStack(spacing: 20) {
+                Text("")
+                    .frame(height: 150)
+                
+                Text("Overview")
+                    .font(.title)
+                    .bold()
+                    .foregroundColor(Color.theme.accent)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            .padding()
+            
+        }
+        .navigationTitle(vm.coin.name)
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(coin: dev.coin)
+        NavigationView {
+            DetailView(coin: dev.coin)
+        }
     }
 }

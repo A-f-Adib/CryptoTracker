@@ -10,7 +10,10 @@ import Combine
 
 class DetailViewModel: ObservableObject {
     
-    let coin : CoinModel
+    @Published var overviewstatistics : [StatisticModel] = []
+    @Published var additionalStatistics : [StatisticModel] = []
+    
+    @Published var coin : CoinModel
     private let coinDetailService : CoinDetailDataService
     private var cancellables = Set<AnyCancellable>()
     
@@ -22,9 +25,17 @@ class DetailViewModel: ObservableObject {
     
     private func addSubscribers() {
         coinDetailService.$coinDetails
-            .sink { (returnedCoinDetails) in
+            .combineLatest($coin)
+            .map( { (coinDetailModel, coinModel) -> (overview: [StatisticModel], additional: [StatisticModel]) in
+                
+                var overViewArray: [StatisticModel] = []
+                
+                return ([],[])
+            })
+            .sink { (returnedArrays) in
                 print("Received coin details")
-                print(returnedCoinDetails)
+                print(returnedArrays.overview)
+                print(returnedArrays.additional)
             }
             .store(in: &cancellables)
     }

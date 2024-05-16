@@ -34,8 +34,8 @@ class DetailViewModel: ObservableObject {
                 let priceStat = StatisticModel(title: "Current Price", value: price, percentageChange: priceChange)
                 
                 let marketCap = "$" + (coinModel.marketCap?.formattedWithAbbreviations() ?? "")
-                let marketCapChange = coinModel.marketCapChangePercentage24H
-                let marketCapStat = StatisticModel(title: "Market Capitalization", value: marketCap, percentageChange: marketCapChange)
+                let marketCapPercentChange = coinModel.marketCapChangePercentage24H
+                let marketCapStat = StatisticModel(title: "Market Capitalization", value: marketCap, percentageChange: marketCapPercentChange)
                 
                 let rank = "\(coinModel.rank)"
                 let rankStat = StatisticModel(title: "Rank", value: rank)

@@ -29,6 +29,7 @@ struct DetailView: View {
         GridItem(.flexible())
     ]
    
+    private let spacing : CGFloat = 20
     
     init(coin: CoinModel) {
        _vm = StateObject(wrappedValue: DetailViewModel(coin: coin ))
@@ -53,6 +54,11 @@ struct DetailView: View {
             .padding()
         }
         .navigationTitle(vm.coin.name)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                navigationBarTrailingItems
+            }
+        }
     }
 }
 
@@ -66,6 +72,17 @@ struct DetailView_Previews: PreviewProvider {
 
 
 extension DetailView {
+    
+    private var navigationBarTrailingItems : some View {
+        HStack {
+            Text(vm.coin.symbol.uppercased())
+                .font(.headline)
+                .foregroundColor(Color.theme.secondaryText)
+            CoinImageView(coin: vm.coin)
+                .frame(width: 25, height: 25)
+        }
+    }
+    
     private var overViewTitle : some View {
         
         Text("Overview")
@@ -87,8 +104,8 @@ extension DetailView {
     private var overViewGrid: some View {
         LazyVGrid(
             columns: columns,
-            alignment: .center,
-            spacing: nil,
+            alignment: .leading,
+            spacing: spacing,
             pinnedViews: [],
             content: {
                 ForEach(vm.overviewstatistics) { stat in
@@ -101,8 +118,8 @@ extension DetailView {
         
         LazyVGrid(
             columns: columns,
-            alignment: .center,
-            spacing: nil,
+            alignment: .leading,
+            spacing: spacing,
             pinnedViews: [],
             content: {
                 ForEach(vm.additionalStatistics) { stat in

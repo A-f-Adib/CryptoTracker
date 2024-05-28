@@ -75,10 +75,9 @@ class DetailViewModel: ObservableObject {
                 
                 return (overViewArray,additionalArray)
             })
-            .sink { (returnedArrays) in
-                print("Received coin details")
-                print(returnedArrays.overview)
-                print(returnedArrays.additional)
+            .sink { [weak self] (returnedArrays) in
+                self?.overviewstatistics = returnedArrays.overview
+                self?.additionalStatistics = returnedArrays.additional
             }
             .store(in: &cancellables)
     }

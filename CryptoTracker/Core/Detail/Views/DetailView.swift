@@ -40,30 +40,14 @@ struct DetailView: View {
             VStack(spacing: 20) {
                 Text("")
                     .frame(height: 150)
+              overViewTitle
                 
-                Text("Overview")
-                    .font(.title)
-                    .bold()
-                    .foregroundColor(Color.theme.accent)
-                    .frame(maxWidth: .infinity, alignment: .leading)
                 Divider()
                 
-                LazyVGrid(
-                    columns: columns,
-                    alignment: .center,
-                    spacing: nil,
-                    pinnedViews: [],
-                    content: {
-                        ForEach(vm.overviewstatistics) { stat in
-                            StatisticView(stat: stat)
-                        }
-                    })
+               
                 
-                Text("Additional Details")
-                    .font(.title)
-                    .bold()
-                    .foregroundColor(Color.theme.accent)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                additionalTitle
+             
                 Divider()
                 
                 LazyVGrid(
@@ -90,4 +74,27 @@ struct DetailView_Previews: PreviewProvider {
             DetailView(coin: dev.coin)
         }
     }
+}
+
+
+extension DetailView {
+    private var overViewTitle : some View {
+        
+        Text("Overview")
+            .font(.title)
+            .bold()
+            .foregroundColor(Color.theme.accent)
+            .frame(maxWidth: .infinity, alignment: .leading)
+    }
+    
+    private var additionalTitle: some View {
+        
+        Text("Additional Details")
+            .font(.title)
+            .bold()
+            .foregroundColor(Color.theme.accent)
+            .frame(maxWidth: .infinity, alignment: .leading)
+    }
+    
+    
 }

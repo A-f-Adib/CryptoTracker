@@ -40,29 +40,17 @@ struct DetailView: View {
             VStack(spacing: 20) {
                 Text("")
                     .frame(height: 150)
-              overViewTitle
                 
+               overViewTitle
                 Divider()
+               overViewGrid
                 
-               
-                
-                additionalTitle
-             
+               additionalTitle
                 Divider()
+               additionalGrid
                 
-                LazyVGrid(
-                    columns: columns,
-                    alignment: .center,
-                    spacing: nil,
-                    pinnedViews: [],
-                    content: {
-                        ForEach(vm.additionalStatistics) { stat in
-                            StatisticView(stat: stat)
-                        }
-                    })
             }
             .padding()
-            
         }
         .navigationTitle(vm.coin.name)
     }
@@ -96,5 +84,30 @@ extension DetailView {
             .frame(maxWidth: .infinity, alignment: .leading)
     }
     
+    private var overViewGrid: some View {
+        LazyVGrid(
+            columns: columns,
+            alignment: .center,
+            spacing: nil,
+            pinnedViews: [],
+            content: {
+                ForEach(vm.overviewstatistics) { stat in
+                    StatisticView(stat: stat)
+                }
+            })
+    }
     
+    private var additionalGrid : some View {
+        
+        LazyVGrid(
+            columns: columns,
+            alignment: .center,
+            spacing: nil,
+            pinnedViews: [],
+            content: {
+                ForEach(vm.additionalStatistics) { stat in
+                    StatisticView(stat: stat)
+                }
+            })
+    }
 }

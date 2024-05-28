@@ -38,20 +38,24 @@ struct DetailView: View {
     
     var body: some View {
         ScrollView {
-            VStack(spacing: 20) {
-                Text("")
-                    .frame(height: 150)
+            
+            VStack {
                 
-               overViewTitle
-                Divider()
-               overViewGrid
+                ChartView(coin: vm.coin)
+                    .padding(.vertical)
                 
-               additionalTitle
-                Divider()
-               additionalGrid
-                
+                VStack(spacing: 20) {
+                    overViewTitle
+                    Divider()
+                   overViewGrid
+                    
+                   additionalTitle
+                    Divider()
+                   additionalGrid
+                    
+                }
+                .padding()
             }
-            .padding()
         }
         .navigationTitle(vm.coin.name)
         .toolbar {

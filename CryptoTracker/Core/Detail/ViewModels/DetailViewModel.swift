@@ -30,8 +30,8 @@ class DetailViewModel: ObservableObject {
                 
                 //overview
                 let price = coinModel.currentPrice.asCurrencyWith6Decimals()
-                let priceChange = coinModel.priceChangePercentage24H
-                let priceStat = StatisticModel(title: "Current Price", value: price, percentageChange: priceChange)
+                let pricePercentChange = coinModel.priceChangePercentage24H
+                let priceStat = StatisticModel(title: "Current Price", value: price, percentageChange: pricePercentChange)
                 
                 let marketCap = "$" + (coinModel.marketCap?.formattedWithAbbreviations() ?? "")
                 let marketCapPercentChange = coinModel.marketCapChangePercentage24H
@@ -48,6 +48,19 @@ class DetailViewModel: ObservableObject {
                 ]
                 
                 //additionals
+                let high = coinModel.high24H?.asCurrencyWith6Decimals() ?? "n/a"
+                let highStat = StatisticModel(title: "24h High", value: high )
+                
+                let low = coinModel.low24H?.asCurrencyWith6Decimals() ?? "n/a"
+                let lowStat = StatisticModel(title: "24h low", value: low)
+            
+                let priceChange = coinModel.priceChange24H?.asCurrencyWith6Decimals() ?? "n/a"
+                let pricePercentChange2 = coinModel.priceChangePercentage24H
+                let pricePercentStat = StatisticModel(title: "24h price change", value: priceChange, percentageChange: pricePercentChange2)
+                
+                let marketCapChange = "$" + (coinModel.marketCapChange24H?.formattedWithAbbreviations() ?? "")
+                let marketCapPercentChange2 = coinModel.marketCapChangePercentage24H
+                let marketCapChangeStat = StatisticModel(title: "24h market cap change", value: marketCapChange, percentageChange: marketCapPercentChange2)
                 
                 
                 

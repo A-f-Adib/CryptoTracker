@@ -43,7 +43,7 @@ class DetailViewModel: ObservableObject {
                 let volume = "$" + (coinModel.totalVolume?.formattedWithAbbreviations() ?? "")
                 let volumeStat = StatisticModel(title: "Volume", value: volume)
                 
-                var overViewArray: [StatisticModel] = [
+                let overViewArray: [StatisticModel] = [
                     priceStat, marketCapStat, rankStat, volumeStat
                 ]
                 
@@ -56,15 +56,24 @@ class DetailViewModel: ObservableObject {
             
                 let priceChange = coinModel.priceChange24H?.asCurrencyWith6Decimals() ?? "n/a"
                 let pricePercentChange2 = coinModel.priceChangePercentage24H
-                let pricePercentStat = StatisticModel(title: "24h price change", value: priceChange, percentageChange: pricePercentChange2)
+                let priceChangeStat = StatisticModel(title: "24h price change", value: priceChange, percentageChange: pricePercentChange2)
                 
                 let marketCapChange = "$" + (coinModel.marketCapChange24H?.formattedWithAbbreviations() ?? "")
                 let marketCapPercentChange2 = coinModel.marketCapChangePercentage24H
                 let marketCapChangeStat = StatisticModel(title: "24h market cap change", value: marketCapChange, percentageChange: marketCapPercentChange2)
                 
+                let blockTime = coinDetailModel?.blockTimeInMinutes ?? 0
+                let blockTimeString = blockTime == 0 ? "n/a" : "\(blockTime)"
+                let blockStat = StatisticModel(title: "Block Time" , value: blockTimeString)
                 
+                let hashing = coinDetailModel?.hashingAlgorithm ?? "n/a"
+                let hashingStat = StatisticModel(title: "Hashing Algorithm", value: hashing)
                 
-                return (overViewArray,[])
+                let additionalArray: [StatisticModel] = [
+                    highStat, lowStat, priceChangeStat, marketCapChangeStat,blockStat,hashingStat
+                ]
+                
+                return (overViewArray,additionalArray)
             })
             .sink { (returnedArrays) in
                 print("Received coin details")

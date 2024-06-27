@@ -50,9 +50,23 @@ struct DetailView: View {
                     
                     ZStack {
                         if let coinDescription = vm.coinDescription, !coinDescription.isEmpty {
-                            VStack {
+                            VStack(alignment: .leading) {
                                 Text(coinDescription)
+                                    .lineLimit(3)
+                                    .font(.callout)
+                                    .foregroundColor(Color.theme.secondaryText)
+                                
+                                Button(action: {
+                                    
+                                }, label: {
+                                    Text("Read More")
+                                        .font(.caption)
+                                        .fontWeight(.bold)
+                                        .padding(.vertical, 4)
+                                })
+                                    .accentColor(.blue)
                             }
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         }
                     }
                    overViewGrid

@@ -25,7 +25,7 @@ struct SettingsView: View {
             }
             .font(.headline)
             .accentColor(.blue)
-            .navigationTitle("Settings")
+            .navigationTitle("About The App")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     XMarkButton()
@@ -103,7 +103,7 @@ extension SettingsView {
     
     private var applicationSection: some View {
         
-        Section(header: Text("About the app")) {
+        Section(header: Text("Application")) {
             Link("Terms of service", destination: defaultURL)
             Link("Privacy Policy", destination: defaultURL)
             Link("Company Website", destination: defaultURL)

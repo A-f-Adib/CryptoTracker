@@ -9,7 +9,21 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            List{
+             
+                Section(header: Text("Header"), footer: Text("Footer")) {
+                    Text("Hi")
+                    Text("Hi")
+                }
+            }
+            .navigationTitle("Settings")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    XMarkButton()
+                }
+            }
+        }
     }
 }
 

@@ -18,23 +18,10 @@ struct SettingsView: View {
     var body: some View {
         NavigationView{
             List{
-             
-                Section(header: Text("Swiftful Thinking"), footer: Text("Footer")) {
-                    VStack(alignment: .leading) {
-                        Image("logo")
-                            .resizable()
-                            .frame(width: 100, height: 100)
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
-                        Text("This app was by swiftful thinking course on youtube. It uses MVVM Architecture, Combine and CoreData.")
-                            .font(.callout)
-                            .fontWeight(.medium)
-                            .foregroundColor(Color.theme.accent)
-                    }
-                    .padding(.vertical)
-                    Link("Subscribe on Yutube", destination: youtubeURL)
-                    Link("Support coffee addiction", destination: coffeeURL)
-                }
+                    swiftfulthinkingSection
+                    coingeckoSection
             }
+            .font(.headline)
             .accentColor(.blue)
             .navigationTitle("Settings")
             .toolbar {
@@ -49,5 +36,48 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
+    }
+}
+
+extension SettingsView {
+    
+    private var swiftfulthinkingSection: some View {
+        
+        Section(header: Text("Swiftful Thinking")) {
+            VStack(alignment: .leading) {
+                Image("logo")
+                    .resizable()
+                    .frame(width: 100, height: 100)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                Text("This app was by swiftful thinking course on youtube. It uses MVVM Architecture, Combine and CoreData.")
+                    .font(.callout)
+                    .fontWeight(.medium)
+                    .foregroundColor(Color.theme.accent)
+            }
+            .padding(.vertical)
+            Link("Subscribe on Yutube", destination: youtubeURL)
+            Link("Support coffee addiction", destination: coffeeURL)
+        }
+    }
+    
+    
+    private var coingeckoSection: some View {
+        
+        Section(header: Text("CoinGecko")) {
+            VStack(alignment: .leading) {
+                Image("coingecko")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 100)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                Text("This app was by swiftful thinking course on youtube. It uses MVVM Architecture, Combine and CoreData.")
+                    .font(.callout)
+                    .fontWeight(.medium)
+                    .foregroundColor(Color.theme.accent)
+            }
+            .padding(.vertical)
+            Link("Subscribe on Yutube", destination: youtubeURL)
+            Link("Support coffee addiction", destination: coffeeURL)
+        }
     }
 }

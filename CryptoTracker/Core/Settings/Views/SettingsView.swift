@@ -25,9 +25,17 @@ struct SettingsView: View {
                             .resizable()
                             .frame(width: 100, height: 100)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
+                        Text("This app was by swiftful thinking course on youtube. It uses MVVM Architecture, Combine and CoreData.")
+                            .font(.callout)
+                            .fontWeight(.medium)
+                            .foregroundColor(Color.theme.accent)
                     }
+                    .padding(.vertical)
+                    Link("Subscribe on Yutube", destination: youtubeURL)
+                    Link("Support coffee addiction", destination: coffeeURL)
                 }
             }
+            .accentColor(.blue)
             .navigationTitle("Settings")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

@@ -35,7 +35,6 @@ struct PortfolioView: View {
             .toolbar(content: {
                 
                 ToolbarItem(placement: .navigationBarLeading) {
-//                  XMarkButton()
                     Button {
                         presentationMode.wrappedValue.dismiss()
                     } label: {
@@ -167,11 +166,11 @@ extension PortfolioView {
               let coin = selectedCoin,
               let amount = Double(quantityText)
         else { return }
+        
         //save to portfolio
         vm.updatePortfolio(coin: coin, amount: amount)
         
         // show checkmark
-        
         withAnimation(.easeIn) {
             showCheckMark = true
             removeSelectedCoin()
@@ -186,7 +185,6 @@ extension PortfolioView {
                 showCheckMark = false
             }
         }
-        
     }
     
     private func removeSelectedCoin() {

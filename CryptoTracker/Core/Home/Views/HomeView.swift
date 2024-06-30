@@ -40,7 +40,14 @@ struct HomeView: View {
                     .transition(.move(edge: .leading))
                 }
                 if showPortfolio {
-                    portfolioCoinsList
+                    
+                    ZStack(alignment: .top) {
+                        if vm.portfolioCoins.isEmpty && vm.searchText.isEmpty {
+                            Text("You havent added any coins to your portfolio yet! Click the + button to get started!")
+                        } else {
+                            portfolioCoinsList
+                        }
+                    }
                         .transition(.move(edge: .trailing))
                 }
                

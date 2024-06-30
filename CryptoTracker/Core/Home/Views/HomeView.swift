@@ -84,7 +84,6 @@ extension HomeView {
         HStack {
             
             CircleButtonView(iconName: showPortfolio ? "plus" : "info")
-//                .animation(.none)
                 .onTapGesture {
                     if showPortfolio {
                        showPortfolioView.toggle()
@@ -128,10 +127,8 @@ extension HomeView {
                     .onTapGesture {
                         segue(coin: coin)
                     }
-                    
             }
         }
-        .listStyle(PlainListStyle())
     }
     
     

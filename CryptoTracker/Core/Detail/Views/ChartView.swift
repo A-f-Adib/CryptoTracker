@@ -13,6 +13,7 @@ struct ChartView: View {
     let maxY : Double
     let minY: Double
     let lineColor: Color
+    
     @State private var percentage: CGFloat = 0
     
     init(coin: CoinModel) {
@@ -22,8 +23,8 @@ struct ChartView: View {
         
         let priceChange = (data.last ?? 0) - (data.first ?? 0)
         lineColor = priceChange > 0 ? Color.theme.green : Color.theme.red
-        
     }
+    
     var body: some View {
         VStack {
             chartView
@@ -40,7 +41,6 @@ struct ChartView: View {
                 }
             }
         }
-        
     }
 }
 

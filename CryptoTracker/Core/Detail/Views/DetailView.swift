@@ -38,10 +38,9 @@ struct DetailView: View {
     }
     
     var body: some View {
+        
         ScrollView {
-            
             VStack {
-                
                 ChartView(coin: vm.coin)
                     .padding(.vertical)
                 
@@ -56,7 +55,6 @@ struct DetailView: View {
                     Divider()
                     additionalGrid
                     websiteSection
-                    
                 }
                 .padding()
             }
@@ -110,6 +108,7 @@ extension DetailView {
     }
     
     private var descriptionSection : some View {
+        
         ZStack {
             if let coinDescription = vm.coinDescription, !coinDescription.isEmpty {
                 VStack(alignment: .leading) {

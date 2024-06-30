@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CircleAnimationView: View {
     
-//    @State var animate = false
     @Binding var animate : Bool
     
     var body: some View {
